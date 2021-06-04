@@ -13,9 +13,9 @@ console.log(JSON.stringify(data, null, 2))
 
                     <div class="mainCard">
                             <div>
-                                <p>Capital <span>${capital}</span> </p>
-                                <p>Population<span>${population}</span> </p>
-                                <p>Languages</p>
+                                <p>Capital: <span>${capital}</span> </p>
+                                <p>Population: <span>${population}</span> </p>
+                                <p>Languages:</p>
                                  <ul>${lang}</ul>
                             </div>
                              <div><img src="${flag}" alt="flad" width="200"></div>
