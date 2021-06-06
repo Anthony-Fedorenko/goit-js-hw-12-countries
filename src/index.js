@@ -16,16 +16,18 @@ const onInputChange = (e) => {
 
   fetchCountries(name)
     .then(res => {
-      console.log(res);
       root.innerHTML = '';
+
+      if (res.length > 10){
+        Swal.fire(`You have - ${res.length} matches. Narrow your search up to 10 !`)
+        return
+      }
       if (res.length > 1) {
-        tableComponent(res.slice(0, 10), root);
+        tableComponent(res, root);
       }
       if (res.length === 1) {
         mainCard({ ...res[0]}, root);
       }
-
-
     })
     .catch(e => {
       if (e.message === 'Unexpected end of JSON input') {
